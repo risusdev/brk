@@ -1246,20 +1246,6 @@ for(var i in x) {
 }, 10000)
 */
 
-// çekiliş sistemi
-
-const { GiveawaysManager } = require('discord-giveaways');
-client.giveawaysManager = new GiveawaysManager(client, {
-    storage: "./giveaways.json",
-    updateCountdownEvery: 5000,
-    default: {
-        botsCanWin: false,
-        exemptPermissions: [ "MANAGE_MESSAGES", "ADMINISTRATOR" ],
-        embedColor: "#FF0000",
-        reaction: "🎉"
-    }//#FF0000
-});
-
 //// otorol sistemi
 
 client.on("guildMemberAdd", async member => {
