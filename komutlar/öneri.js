@@ -1,31 +1,36 @@
-const Discord = require("discord.js")
-const db = require("quick.db")
+const Discord = require ("discord.js")
 
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
-    const öneri = args.slice(0).join(' ');
-    if(!öneri) return message.channel.send(":red_square: Bir öneri belirtmelisin. ")
-       
-  const embed = new Discord.MessageEmbed()
-//.setTitle("Bana bir öneride bulundular!")
-  .addField("Belirtilen Öneri:", öneri)
-  .addField("Öneri Belirten Kişi:", `Adı: **${message.author.tag}** - Etiketi: <@${message.author.id}> - ID: **${message.author.id}**`)
-  //etColor("BLUE")
-  .setFooter(client.user.username, client.user.avatarURL())
-  .setThumbnail(message.author.avatarURL({format: "gif"}))
-  message.channel.send(`:green_square: Öneriniz başarıyla iletildi!`)
-  client.channels.cache.get("KANALİD").send(embed)
+
+    let istek = args.slice(0).join(' ')
+if(!istek) return message.channel.send("**İsteğini Yazar Mısın ? Örnek Kullanım; -öneri <öneri>**")
+
+
+
+    const mesaj = new Discord.MessageEmbed()
+    .setTitle("Başarılı !")
+    .setDescription("**Önerin Başarıyla Sahibime İletildi !**")
+    .setColor("#30FD00")
+    message.channel.send(mesaj)
+
+
+    const öneri = new Discord.MessageEmbed()
+    .setTitle("Yeni Bir Öneri !")
+    .addField("Öneriyi Gönderen Kullanıcı;", message.author)
+    .addField("Öneri;", istek)
+    client.channels.cache.get("850708521888120862").send(öneri)
 }
 
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ['istek'],
     permLevel: 0
 }
 
 exports.help = {
     name: "öneri",
-    description: "öneri bildirirsiniz",
-    usage: "öneri <öneri>"
-}
+    description: "Belirlediğiniz Kanala Öneri Gönderir.",
+    usage: "-öneri"
+} //Plasmic Code - FadeAway

@@ -17,5 +17,5 @@ module.exports = client => {
   var rastgeleOyun = Math.floor(Math.random() * msgArray.length);
   client.user.setActivity(`${msgArray[rastgeleOyun]}`, { type: 'WATCH' ,  url: 'https://www.twitch.tv' })
 }, 5000);
-    console.log(`Crypto başarıyla giriş yaptı.`);
+    console.log(`Pearlys Aktif Giriş yapıldı!`);
 }

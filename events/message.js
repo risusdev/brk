@@ -33,7 +33,7 @@ module.exports = message => {
    .setTimestamp()
    .setFooter(`Pearlys`)
    .setDescription("**"+message.author.tag+"** adlı kullanıcı karalistede olup **"+command+"** adlı komutu: **"+message.guild.name+"** sunucusunda kullanmayı denedi.")
-   client.channels.cache.get("KANALİD").send(westrabencanımbro)
+   client.channels.cache.get("850707762006851584").send(westrabencanımbro)
   return message.channel.send(karaliste)
 
         }
@@ -44,7 +44,7 @@ module.exports = message => {
    .setDescription("**"+message.author.tag+"** adlı kullanıcı **"+command+"** adlı komutu: **"+message.guild.name+"** sunucusunda kullandı.")
        
        
- client.channels.cache.get("KANALİD").send(westrabencanımbrosadadsasd)
+ client.channels.cache.get("850707483429044224").send(westrabencanımbrosadadsasd)
 
     //wqerewq
    if (cmd.conf.enabled === false) {

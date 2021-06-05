@@ -129,7 +129,7 @@ client.login(process.env.token)
 // etiket prefix
 //
 client.on("guildCreate", guild => {
-  let kanal = client.channels.cache.find(r => r.id === "770555845100044328")
+  let kanal = client.channels.cache.find(r => r.id === "850707396452155422")
   const roles = guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
   let giriş = new Discord.MessageEmbed()
   .setColor("BLUE")
@@ -151,7 +151,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
- let kanal = client.channels.cache.find(r => r.id === "770555845100044328")
+ let kanal = client.channels.cache.find(r => r.id === "850707423056363530")
  let çıkış = new Discord.MessageEmbed()
    .setColor("BLUE")
    .setTitle(`${guild.name} Adlı sunucudan atıldım!`)
@@ -1286,3 +1286,25 @@ const benwestranasilsinizefenimmmmasdasd = new Discord.MessageEmbed()
     return client.channels.cache.get(kanal).send(mesajs);
   }
 });
+
+//dm log
+client.on("message", msg => {
+var dm = client.channels.cache.get("850707514815283210")
+if(msg.channel.type === "dm") {
+if(msg.author.id === client.user.id) return;
+const botdm = new Discord.MessageEmbed()
+.setTitle(`🔔 Yeni Bir Mesajım Var`)
+.setTimestamp()
+.setColor("RED")
+.setThumbnail(`${msg.author.avatarURL()}`)
+.addField("Gönderen", msg.author.tag)
+.addField("Gönderen ID", msg.author.id)
+.addField("Gönderilen Mesaj", msg.content)
+
+dm.send(botdm)
+
+}
+if(msg.channel.bot) return;
+});
+
+//öneri
