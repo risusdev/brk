@@ -122,7 +122,7 @@ client.on("error", e => {
   console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
 
-client.login(ayar.token)
+client.login(process.env.token)
 
 ///==========komutlar==========\\\
 
