@@ -2,7 +2,7 @@ const discord = require('discord.js');
 exports.run = async(client, message, args) => {
     const embed = new discord.MessageEmbed()
     .setTitle('Pearlys Yardım Menüsü')
-    .addField('p!kullanıcı', 'Herkesin Kullanabiecegi Komutların Menüsü :tada:', true)
+    .addField('p!kullanıcı', '<:kullanici:850777538745729036> Herkesin Kullanabiecegi Komutların Menüsü :tada:', true)
     .addField('-yardım', 'yardım menüsü', true)
     .addField('-yardım', 'yardım menüsü', true)
     .addField('-yardım', 'yardım menüsü', true)
