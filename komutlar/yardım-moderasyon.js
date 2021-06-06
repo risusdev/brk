@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
 <:mod:850788085511618600> **p!küfürengel aç/kapat/log**
 > **Küfür Engel Açar Kapatır Küfür Logu Ayarlar !**
 <:mod:850788085511618600> **p!reklamengel aç/kapat/log**
-> **Mod Log Kanalını Ayarlar Sıfırlar**
+> **Reklam Engel Açar Kapatır Reklam Logu Ayarlar !**
 <:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
 > **Mod Log Kanalını Ayarlar Sıfırlar**
 <:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
