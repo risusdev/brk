@@ -9,8 +9,38 @@ exports.run = async(client, message, args) => {
      .setDescription(`
 <:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
 > **Mod Log Kanalını Ayarlar Sıfırlar**
-
-
+<:mod:850788085511618600> **p!ban @kullanıcı**
+> **Etiketlenen Kullanıcıyı Banlar **
+<:mod:850788085511618600> **p!küfürengel aç/kapat/log**
+> **Küfür Engel Açar Kapatır Küfür Logu Ayarlar !**
+<:mod:850788085511618600> **p!reklamengel aç/kapat/log**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
+<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Mod Log Kanalını Ayarlar Sıfırlar**
 `)   
 .setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
 .setFooter("Pearlys", message.author.avatarURL())
