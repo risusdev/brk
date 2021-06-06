@@ -7,7 +7,7 @@ exports.run = async(client, message, args) => {
 **İlk Öncelikle Beni Kullandıgın İçin Teşekkür Ederim **
 **Komutlarım Aşşadadır ** <a:assagiok:850817439783583834>`)   
     .addField('p!kullanıcı', '<:kullanici:850777538745729036> **Kullanıcı yardım menüsünü gösterir.**', true)
-    .addField('p!yardım', '<:mod:850788085511618600> **Moderasyon yardım menüsünü gösterir.**', true)
+    .addField('p!moderasyon', '<:mod:850788085511618600> **Moderasyon yardım menüsünü gösterir.**', true)
     .addField('p!davetsistemi', '<:davet:850789805679181844> **Davet sistemi yardım menüsünü gösterir.**', true)
     .addField('p!kayıtsistemi', '<a:kayit:850809778418221126> **Kayıt sistemi yardım menüsünü gösterir.**', true)
     .addField('p!korumasistemi', '<a:guard1:850810781012066415> **Koruma sistemi yardım menüsünü gösterir.**', true)
