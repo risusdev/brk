@@ -13,8 +13,8 @@ exports.run = async(client, message, args) => {
 > **Etiketlenen Kullanıcıyı Banlar **
 <:mod:850788085511618600> **p!küfürengel aç/kapat/log**
 > **Küfür Engel Açar Kapatır Küfür Logu Ayarlar !**
-<:mod:850788085511618600> **p!reklamengel aç/kapat/log**
-> **Reklam Engel Açar Kapatır Reklam Logu Ayarlar !**
+<:mod:850788085511618600> **p!reklamengel aç/kapat**
+> **Reklam Engel Açar Kapatır!**
 <:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
 > **Mod Log Kanalını Ayarlar Sıfırlar**
 <:mod:850788085511618600> **p!mod-log #kanal / sıfırla**

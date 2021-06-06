@@ -955,82 +955,33 @@ db.delete(`time.${message.guild.id}.${message.author.id}`);
 
 // reklam engel
 
-////reklam-engel
-
-const reklam = [
-  ".com",
-  ".net",
-  ".xyz",
-  ".tk",
-  ".pw",
-  ".io",
-  ".me",
-  ".gg",
-  "www.",
-  "https",
-  "http",
-  ".gl",
-  ".org",
-  ".com.tr",
-  ".biz",
-  "net",
-  ".rf",
-  ".gd",
-  ".az",
-  ".party",
-".gf"
-];
-client.on("messageUpdate", async (old, nev) => {
-
-if (old.content != nev.content) {
-let i = await db.fetch(`reklam.${nev.member.guild.id}.durum`);
-let y = await db.fetch(`reklam.${nev.member.guild.id}.kanal`);
-if (i) {
-
-if (reklam.some(word => nev.content.includes(word))) {
-if (nev.member.hasPermission("BAN_MEMBERS")) return ;
- //if (ayarlar.gelistiriciler.includes(nev.author.id)) return ;
-const embed = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: ${nev.author} , **Mesajını editleyerek reklam yapmaya çalıştı!**`)
-      .addField("Mesajı:",nev)
-  
-      nev.delete();
-      const embeds = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: ${nev.author} , **Mesajı editleyerek reklam yapamana izin veremem!**`) 
-    client.channels.cache.get(y).send(embed)
-      nev.channel.send(embeds).then(msg => msg.delete({timeout:5000}));
-    
-}
-} else {
-}
-if (!i) return;
-}
-});
-
-client.on("message", async msg => {
-
-
-if(msg.author.bot) return;
-if(msg.channel.type === "dm") return;
-   let y = await db.fetch(`reklam.${msg.member.guild.id}.kanal`);
-
-let i = await db.fetch(`reklam.${msg.member.guild.id}.durum`);
-    if (i) {
-        if (reklam.some(word => msg.content.toLowerCase().includes(word))) {
+client.on("message", msg => {
+let db = require('quick.db')
+ let e = db.fetch(`reklamengel_${msg.guild.id}`)
+if(e === "aktif"){  
+      const reklam = [".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", "net", ".rf.gd", ".az", ".party", "discord.gg",];
+        if (reklam.some(word => msg.content.includes(word))) {
           try {
-           if (!msg.member.hasPermission("MANAGE_GUILD")) {
-           //  if (!ayarlar.gelistiriciler.includes(msg.author.id)) return ;
-msg.delete({timeout:750});
-              const embeds = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: <@${msg.author.id}> , **Bu sunucuda reklam yapmak yasak!**`)
-msg.channel.send(embeds).then(msg => msg.delete({timeout: 5000}));
-          const embed = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: ${msg.author} , **Reklam yapmaya çalıştı!**`) .addField("Mesajı:",msg)
-         client.channels.cache.get(y).send(embed)
+            if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  msg.delete();
+                         const batusuyar = new Discord.MessageEmbed()
+.setColor('RED')
+.setTitle("Reklam Engel Filtresi")
+.setDescription(`Sunucuda Reklam Engel Filtresi Açık Reklam Yapamazsın <@${msg.authorid}>`)
+                         
+    
+                    return msg.channel.send(batusuyar).then(msg => msg.delete(3000));
+   
+ 
+  msg.delete(3000);                              
+ 
             }              
           } catch(err) {
             console.log(err);
           }
-        }
-    }
-   if(!i) return ;
-});
+        }}
+else return;
+    });
 
 
 //reklam engel son //
