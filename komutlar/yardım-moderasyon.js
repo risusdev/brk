@@ -22,7 +22,9 @@ exports.run = async(client, message, args) => {
 <:mod:850788085511618600> **p!oylama**
 > **Oylama Yaparsınız!**
 <:mod:850788085511618600> **p!otorol-ayarla @rol #kanal /sıfırla**
-> **Otorol Ayarlar Sıfırlar!**
+> **Otorol Ayarlar /Sıfırlar!**
+<:mod:850788085511618600> **p!otorol-mesaj-ayarla /sıfırla**
+> **Otorol Mesajını Ayarlar Sıfırlar !**
 
 `)   
 .setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
