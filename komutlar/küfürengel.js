@@ -2,8 +2,8 @@ const discord = require('discord.js');
 const Database = require("plasma-db");
 const db = new Database("./database.json");
 exports.run = async(client, message, args) => {
-    if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın')
-    if(!args[0]) return message.channel.send(`Merhaba komutlar için lütfen !küfür-engel yardım yazınız!`)    
+    if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('<a:hayir:851167888122707989> **Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın**')
+    if(!args[0]) return message.channel.send(`<a:hayir:851167888122707989> **Yanlış Kullanım !** Örnek Kullanım <a:assagiok:850817439783583834> \n \n \`p!küfürengel aç\` \`p!küfürengel sıfırla\`  \n \n \`p!küfürengel log #kanal\`  \`p!küfürengel mesaj <mesaj>\`  `)    
     if(args[0] == "log") {
 let enginar = message.mentions.channels.first()
 if(!enginar) return message.channel.send('Lütfen küfür engel log kanalını belirtiniz!')
@@ -55,16 +55,10 @@ db.delete(`küfürengel_${message.guild.id}`)
 return message.channel.send('Sistem başarı ile sıfırlandı!')
 };
 //
-if(args[0] == "yardım") {
-   const embed = new discord.MessageEmbed()
-    .setTitle(`Küfür engel komutları`)
-    .setDescription(`p!küfür-engel yardım = Küfür engel komutlarını görürsünüz. \n p!küfür-engel log = Küfür-engel log kanalını ayarlarsınız. \n p!küfür-engel aç = Küfür engel sistemini açarsınız \n p!küfür-engel sıfırla = Küfür engel sistemini sıfırlarsınız \n p!küfür-engel mesaj = Küfür engel mesaj ayarlarsınız.`)
-.setColor('RANDOM')
-    message.channel.send(embed)
+
 
 
 }
-};
 exports.conf = {
     enabled: true, 
     guildOnly: false,
@@ -72,5 +66,5 @@ exports.conf = {
     permLevel: 0
     };
     exports.help = {
-        name : "küfür-engel"
+        name : "küfürengel"
         };
