@@ -14,10 +14,10 @@ exports.run = async(client, message, args) => {
 <:mod:850788085511618600> **p!reklamengel aç/kapat**
 > **Reklam Engel Açar Kapatır!**
 <:mod:850788085511618600> **p!küfürengel aç / sıfırla /log /mesaj **
-> **Mod Log Kanalını Ayarlar Sıfırlar**
-<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
-> **Mod Log Kanalını Ayarlar Sıfırlar**
-<:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
+> **Küfür Engeli Açar / Kapatır / Küfür Logu Ayarlar / Küfür Engel Mesajı Ayarlar .**
+<:mod:850788085511618600> **p!sa-as aç / kapat**
+> **Biris \`sa\` Yazınca**
+<:mod:850788085511618600> **p!sil <Sayı>**
 > **Mod Log Kanalını Ayarlar Sıfırlar**
 <:mod:850788085511618600> **p!mod-log #kanal / sıfırla**
 > **Mod Log Kanalını Ayarlar Sıfırlar**

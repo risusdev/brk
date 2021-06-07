@@ -803,10 +803,10 @@ client.on("guildMemberAdd", member => {
   var kontrol = [];
 
   if (ayyy < 1) {
-    kontrol = "**Şüpheli** :red_square:" ;
+    kontrol = "**Şüpheli** <a:hayir:851167888122707989>" ;
   }
   if (ayyy > 1) {
-    kontrol = "**Güvenilir** :green_square: ";
+    kontrol = "**Güvenilir** <:evet:851169108262912000>";
   }
 
   if (!kanal) return;
@@ -814,7 +814,7 @@ client.on("guildMemberAdd", member => {
   ///////////////////////
 
   let randomgif = [ 
-             "https://media.discordapp.net/attachments/744976703163728032/751451554132918323/tenor-1.gif", "https://media.discordapp.net/attachments/744976703163728032/751451693992116284/black.gif", "https://media.discordapp.net/attachments/765870655958548490/765871557993824256/tumblr_ozitqtbIIf1tkflzao1_540.gif", "https://media.discordapp.net/attachments/765870655958548490/765871565257965578/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f32622f61352f31312f32626135313161663865.gif"];
+             "https://media.discordapp.net/attachments/765870655958548490/765871565257965578/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f32622f61352f31312f32626135313161663865.gif", "https://media.discordapp.net/attachments/744976703163728032/751451693992116284/black.gif", "https://media.discordapp.net/attachments/765870655958548490/765871557993824256/tumblr_ozitqtbIIf1tkflzao1_540.gif", "https://media.discordapp.net/attachments/765870655958548490/765871565257965578/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f32622f61352f31312f32626135313161663865.gif"];
 
   ///////////////////
   const embed = new Discord.MessageEmbed()
@@ -876,7 +876,7 @@ if(Date.now() < maxTime) {
   const westraaaaam = new Discord.MessageEmbed()
   .setColor(0x36393F)
   .setDescription(`:red_square: <@${message.author.id}> , **Bu sunucuda spam yapmak yasak!**`)
- // .setFooter(`Bu mesaj otomatik olarak silinecektir.`)
+ .setFooter(`Bu mesaj otomatik olarak silinecektir.`)
  if (message.member.hasPermission("BAN_MEMBERS")) return ;
  message.channel.send(westraaaaam).then(msg => msg.delete({timeout: 1500}));
   return message.delete();
