@@ -745,90 +745,46 @@ client.channels.cache.get(modlog).send(embed)
 
 //küfür engel //
 
-const küfür = [
-        "siktir",
-        "fuck",
-        "puşt",
-        "pust",
-        "piç",
-        "sikerim",
-        "sik",
-        "yarra",
-        "yarrak",
-        "amcık",
-        "orospu",
-        "orosbu",
-        "orosbucocu",
-        "oç",
-        ".oc",
-        "ibne",
-        "yavşak",
-        "bitch",
-        "dalyarak",
-        "amk",
-        "awk",
-        "taşak",
-        "taşşak",
-        "daşşak",
-		"sikm",
-		"sikim",
-		"sikmm",
-		"skim",
-		"skm",
-		"sg"
-      ];
-client.on("messageUpdate", async (old, nev) => {
-  
-    if (old.content != nev.content) {
-    let i = await db.fetch(`küfür.${nev.member.guild.id}.durum`);
-    let y = await db.fetch(`küfür.${nev.member.guild.id}.kanal`);
-   if (i) {
-      
-      if (küfür.some(word => nev.content.includes(word))) {
-      if (nev.member.hasPermission("BAN_MEMBERS")) return ;
-       //if (ayarlar.gelistiriciler.includes(nev.author.id)) return ;
- const embed = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: ${nev.author} , **Mesajını editleyerek küfür etmeye çalıştı!**`)
-            .addField("Mesajı:",nev)
-        
-            nev.delete();
-            const embeds = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: ${nev.author} , **Mesajı editleyerek küfür etmene izin veremem!**`) 
-          client.channels.cache.get(y).send(embed)
-            nev.channel.send(embeds).then(msg => msg.delete({timeout:5000}));
-          
-      }
-    } else {
+client.on("message", async msg => {
+ 
+ const i = await db.fetch(`${msg.guild.id}.kufur`)
+    if (i) {
+        const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
+        if (kufur.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  msg.delete();
+                          
+                      return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
+            }              
+          } catch(err) {
+            console.log(err);
+          }
+        }
     }
     if (!i) return;
-  }
 });
 
-client.on("message", async msg => {
-
-     
-    if(msg.author.bot) return;
-    if(msg.channel.type === "dm") return;
-         let y = await db.fetch(`küfür.${msg.member.guild.id}.kanal`);
-   
-    let i = await db.fetch(`küfür.${msg.member.guild.id}.durum`);
-          if (i) {
-              if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
-                try {
-                 if (!msg.member.hasPermission("MANAGE_GUILD")) {
-                 //  if (!ayarlar.gelistiriciler.includes(msg.author.id)) return ;
-     msg.delete({timeout:750});
-                    const embeds = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: <@${msg.author.id}> , **Bu sunucuda küfür yasak!**`)
-      msg.channel.send(embeds).then(msg => msg.delete({timeout: 5000}));
-                const embed = new Discord.MessageEmbed() .setColor(0x36393F) .setDescription(`:red_square: ${msg.author} , **Küfür etmeye çalıştı!**`) .addField("Mesajı:",msg)
-               client.channels.cache.get(y).send(embed)
-                  }              
-                } catch(err) {
-                  console.log(err);
-                }
-              }
+client.on("messageUpdate", (oldMessage, newMessage) => {
+  
+  
+ const i = db.fetch(`${newMessage.guild.id}.kufur`)
+    if (i) {
+        const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
+        if (kufur.some(word => newMessage.content.includes(word))) {
+          try {
+            if (!newMessage.member.hasPermission("BAN_MEMBERS")) {
+                  newMessage.delete();
+           //WYNEX              
+                      return newMessage.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
+            }              
+          } catch(err) {
+            console.log(err);
           }
-         if(!i) return ;
+        }
+    }
+    if (!i) return;
 });
-
 //küfür engel son //
 // kayıt sistemi
 
