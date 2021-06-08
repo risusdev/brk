@@ -1,44 +1,48 @@
-const WestraDiscord = require('discord.js');
-const WestraClient = new WestraDiscord.Client();
-const ayar = require('../config.json');
-let WestraPrefix = ayar.prefix
-let WestraGif = ayar.giflink
+const discord = require('discord.js');
+exports.run = async(client, message, args) => {
+    const embed = new discord.MessageEmbed()
+.setAuthor(`Pearlys Botlist Sistemi Yardım Menüsü`, client.user.avatarURL())
+.setColor("#09f3f3") 
+  .setTitle(`Sanırım Botlist Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
+     .setDescription(`
+<:botlist:850815022531870731> **p!başvuru-gidecek-kanal-ayarla #kanal**
+> **Kayıt edilen kişiden alınacak rolü ayarlar.**
+<:botlist:850815022531870731> **p!kayıt-kanal #kanal**
+> **Kayıtın yapılacağı kanalı belirlersiniz.**
+<:botlist:850815022531870731> **p!kayıt-hg #kanal**
+> **Kayıt hoş geldin kanalını ayarlarsınız.**
+<:botlist:850815022531870731> **p!kayıt-yetkili @rol**
+> **Bir Kişiyi Kayıt Edebilecek Yetkiliyi Ayarlar**
+<:botlist:850815022531870731> **p!erkek-rol @rol**
+> **Kayıt edilince verilecek erkek rolü ayarlar.**
+<:botlist:850815022531870731> **p!kız-rol @rol**
+> **Kayıt edilince verilecek kız rolü ayarlar**
 
-exports.run = (client, message) => {
- const WestraEmbed = new WestraDiscord.MessageEmbed()
-  .setColor(0x36393F)
- .setAuthor(`${client.user.username} | Bot List Sistemi Yardım Menüsü`)
- .setDescription(`
-<a:HareketliHype:822382020725309465> **${WestraPrefix}başvuru-gidecek-kanal-ayarla #kanal** \n-> Başvuru gidecek kanalı ayarlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}başvuru-gidecek-kanal-sıfırla** \n-> Başvuru gidecek kanalı sıfırlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}başvuru-yapılacak-kanal-ayarla #kanal** \n-> Başvuru yapılacak kanalı ayarlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}başvuru-yapılacak-kanal-sıfırla** \n-> Başvuru yapılacak kanalı sıfırlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}başvuru-log-kanal-ayarla #kanal** \n-> Başvuru log kanal ayarlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}başvuru-log-kanal-sıfırla** \n-> Başvuru log kanal sıfırlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}botlist-yetkili-rol-ayarla @rol** \n-> Botlist yetkili rolü ayarlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}botlist-yetkili-rol-sıfırla** \n-> Botlist yetkili rolü sıfırlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}botekle botid prefix dblonay** \n-> Sisteme bot ekler.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}botkapalı botid sahipid** \n-> Botu kapalı olduğu nedeniyle reddeder.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}botonayla botid sahipid** \n-> Botu onaylar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}botreddet botid sahipid sebep** \n-> Botu reddeder.
+<a:assagiok:850817439783583834> **__Kayıt Komutları__** <a:assagiok:850817439783583834>
+<:botlist:850815022531870731> **p!erkek @kullanıcı isim yaş**
+> **Erkekleri kayıt etmeye yarar.**
+<:botlist:850815022531870731> **p!kız @kullanıcı isim yaş**
+> **Kızları kayıt etmeye yarar.**
 
-__NOT:__ Eğer bütün ayarlamaları yapmazsanız sistem çalışmaz.
-`)
- .setFooter(`Pearlys`)
- .setTimestamp()
- .setImage(WestraGif)
- message.channel.send(WestraEmbed)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  kategori: "Bot",
-  permLevel: 0
+<a:assagiok:850817439783583834> **__Sıfırlamak İçin__** <a:assagiok:850817439783583834>
+
+<:botlist:850815022531870731> **__Bir Komutu Sıfırlamak İçin p!<komut> sıfırla Örnegin : p!kayıt-yetkili sıfırla Şeklinde Sıfırlıyabilirsiniz !__**
+> **BOTLİST SİSTEMİ KOMUTLARINI NASIL SIFIRLARIZ CEVAPININ YANITI ANLATILDI**
+`)   
+.setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
+.setFooter("Pearlys", message.author.avatarURL())
+.setTimestamp()
+message.channel.send(embed)
 };
+exports.conf = {
+enabled: true,
+guildOnly: false,
+permLevel: 0,
+aliases: ['kayıt']
 
+
+
+};
 exports.help = {
-  name: 'botlistsistemi',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
+name: "kayıtsistemi"
 };
