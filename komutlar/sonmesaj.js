@@ -4,7 +4,8 @@ exports.run = async (client, message, args) => {
   .setColor("BLUE")
   .setFooter(`Pearlys`)
   .setTimestamp()
-  .setDescription(`https://discord.com/channels/${message.guild.id}/${message.author.lastMessageChannelID}/${message.author.lastMessageID}`)
+  .setDescription(`Pearlys Bot Son Mesaj Menüsü`)
+.addField(``)
   message.channel.send(wembed)
 }
 exports.conf = {

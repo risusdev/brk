@@ -1,34 +1,33 @@
-const WestraDiscord = require('discord.js');
-const WestraClient = new WestraDiscord.Client();
-const ayar = require('../config.json');
-let WestraPrefix = ayar.prefix
-let WestraGif = ayar.giflink
-
-exports.run = (client, message) => {
- const WestraEmbed = new WestraDiscord.MessageEmbed()
-  .setColor(0x36393F)
- .setAuthor(`${client.user.username} | Logo Sistemi Yardım Menüsü`)
- .setDescription(`
-<a:HareketliHype:822382020725309465> **${WestraPrefix}arrow** \n-> Ok şeklinde logo yapar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}gold** \n-> Altın şeklinde logo yapar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}green** \n-> Yeşil şeklinde logo yapar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}graffiti** \n-> Graffiti şeklinde logo yapar.
-`)
- .setFooter(`Pearlys`)
- .setTimestamp()
- .setImage(WestraGif)
- message.channel.send(WestraEmbed)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["logo"],
-  kategori: "Bot",
-  permLevel: 0
+const discord = require('discord.js');
+exports.run = async(client, message, args) => {
+    const embed = new discord.MessageEmbed()
+.setAuthor(`Pearlys Yardım Menüsü`, client.user.avatarURL())
+.setColor("#09f3f3") 
+  .setTitle(`** Sanırım Logo Komutlarımı Merak Ettin ** <a:assagiok:850817439783583834>`)   
+     .setDescription(`
+<a:logo:850814040665882664> **p!arrow**
+> **Ok şeklinde logo yapar.**
+<a:logo:850814040665882664>**p!gold**
+> **Altın şeklinde logo yapar.**
+<a:logo:850814040665882664> **p!green**
+> **Yeşil şeklinde logo yapar.**
+<a:logo:850814040665882664> **p!graffiti**
+> **Graffiti şeklinde logo yapar.**
+`)   
+.setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
+.setFooter("Pearlys", message.author.avatarURL())
+.setTimestamp()
+message.channel.send(embed)
 };
+exports.conf = {
+enabled: true,
+guildOnly: false,
+permLevel: 0,
+aliases: ['logo']
 
+
+
+};
 exports.help = {
-  name: 'logosistemi',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
+name: "logosistemi"
 };
