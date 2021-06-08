@@ -1,37 +1,33 @@
-const WestraDiscord = require('discord.js');
-const WestraClient = new WestraDiscord.Client();
-const ayar = require('../config.json');
-let WestraPrefix = ayar.prefix
-let WestraGif = ayar.giflink
-
-exports.run = (client, message) => {
- const WestraEmbed = new WestraDiscord.MessageEmbed()
-  .setColor(0x36393F)
- .setAuthor(`${client.user.username} | Kullanıcı Yardım Menüsü`)
- .setDescription(`
-<a:HareketliHype:822382020725309465> **${WestraPrefix}davet** \n-> Botu davet edersiniz.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}shardbilgi** \n-> Botun shard bilgilerini gösterir.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}pp** \n-> Etiketlediğiniz kişinin avatarını gösterir.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}randompp** \n-> Botun ekli olduğu sunuculardaki her hangi birinin avatarını atar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}öneri** \n-> Bota öneri belirtirsiniz.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}istatistik** \n-> Botun istatistiğini gösterir.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}sonmesaj** \n-> Yazdığınız son mesajı gösterir.
-`)
- .setFooter(`Pearlys`)
- .setTimestamp()
- .setImage(WestraGif)
- message.channel.send(WestraEmbed)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  kategori: "Bot",
-  permLevel: 0
+const discord = require('discord.js');
+exports.run = async(client, message, args) => {
+    const embed = new discord.MessageEmbed()
+.setAuthor(`Pearlys Yardım Menüsü`, client.user.avatarURL())
+.setColor("#09f3f3") 
+  .setTitle(`Sanırım Kullanıcı Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
+     .setDescription(`
+<a:logo:850814040665882664> **p!davet**
+> **Botun Destek Sunucusu Ve Davet Linkine Erişirsiniz !**
+<a:logo:850814040665882664>**p!avatar**
+> **Etiketlediginiz Kişinin Avatarına Bakarsınız**
+<a:logo:850814040665882664> **p!randompp**
+> **Yeşil şeklinde logo yapar.**
+<a:logo:850814040665882664> **p!graffiti**
+> **Graffiti şeklinde logo yapar.**
+`)   
+.setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
+.setFooter("Pearlys", message.author.avatarURL())
+.setTimestamp()
+message.channel.send(embed)
 };
+exports.conf = {
+enabled: true,
+guildOnly: false,
+permLevel: 0,
+aliases: ['kullanıcı']
 
+
+
+};
 exports.help = {
-  name: 'kullanıcı',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
+name: "kullanıcı"
 };
