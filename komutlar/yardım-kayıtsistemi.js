@@ -5,14 +5,20 @@ exports.run = async(client, message, args) => {
 .setColor("#09f3f3") 
   .setTitle(`Sanırım Kayıt Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
      .setDescription(`
-<a:guard1:850810781012066415> **p!ban-koruma #kanal**
-> **Ban koruma sistemini açar.**
-<a:guard1:850810781012066415> **p!kanal-koruma #kanal**
-> **Kanal koruma sistemini açar.**
-<a:guard1:850810781012066415> **p!rol-koruma #kanal**
-> **Rol koruma sistemini açar.**
-<a:guard1:850810781012066415> **p!spam-koruma**
-> ** Spam koruma sistemini açar.**
+<a:kayit:850809778418221126> **p!alınacak-rol @rol**
+> **Kayıt edilen kişiden alınacak rolü ayarlar.**
+<a:kayit:850809778418221126> **p!kayıt-kanal #kanal**
+> **Kayıtın yapılacağı kanalı belirlersiniz.**
+<a:kayit:850809778418221126> **p!kayıt-hg #kanal**
+> **Kayıt hoş geldin kanalını ayarlarsınız.**
+<a:kayit:850809778418221126> **p!kayıt-yetkili @rol**
+> **Bir Kişiyi Kayıt Edebilecek Yetkiliyi Ayarlar**
+<a:kayit:850809778418221126> **p!kayıt-yetkili @rol**
+> **Bir Kişiyi Kayıt Edebilecek Yetkiliyi Ayarlar**
+<a:kayit:850809778418221126> **p!kayıt-yetkili @rol**
+> **Bir Kişiyi Kayıt Edebilecek Yetkiliyi Ayarlar**
+<a:kayit:850809778418221126> **p!kayıt-yetkili @rol**
+> **Bir Kişiyi Kayıt Edebilecek Yetkiliyi Ayarlar**
 
 <a:assagiok:850817439783583834> **__Sıfırlamak İçin__** <a:assagiok:850817439783583834>
 
