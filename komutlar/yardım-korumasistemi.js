@@ -5,6 +5,7 @@ exports.run = async(client, message, args) => {
 .setColor("#09f3f3") 
   .setTitle(`Sanırım Kullanıcı Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
      .setDescription(`
+<a:assagiok:850817439783583834> **__Sistemi Açma ve Ayarlama Komutları__** <a:assagiok:850817439783583834>
 <a:guard1:850810781012066415> **p!ban-koruma #kanal**
 > **Ban koruma sistemini açar.**
 <a:guard1:850810781012066415> **p!kanal-koruma #kanal**

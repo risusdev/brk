@@ -5,6 +5,7 @@ exports.run = async(client, message, args) => {
 .setColor("#09f3f3") 
   .setTitle(`Sanırım Davet Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
      .setDescription(`
+<a:assagiok:850817439783583834> **__Sistemi Açma ve Ayarlama Komutları__** <a:assagiok:850817439783583834>
 <:davet:850789805679181844> **p!davet-kanal #kanal**
 > **Davet Giriş Çıkış Kanalını Ayarlar!**
 <:davet:850789805679181844> **p!davet-kanal-sıfırla**

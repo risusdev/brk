@@ -5,6 +5,7 @@ exports.run = async(client, message, args) => {
 .setColor("#09f3f3") 
   .setTitle(`Sanırım Kayıt Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
      .setDescription(`
+<a:assagiok:850817439783583834> **__Sistemi Açma ve Ayarlama Komutları__** <a:assagiok:850817439783583834>
 <a:kayit:850809778418221126> **p!alınacak-rol @rol**
 > **Kayıt edilen kişiden alınacak rolü ayarlar.**
 <a:kayit:850809778418221126> **p!kayıt-kanal #kanal**

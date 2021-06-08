@@ -5,9 +5,10 @@ exports.run = async(client, message, args) => {
 .setColor("#09f3f3") 
   .setTitle(`Sanırım Botlist Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
      .setDescription(`
+<a:assagiok:850817439783583834> **__Sistemi Açma ve Ayarlama Komutları__** <a:assagiok:850817439783583834>
 <:botlist:850815022531870731> **p!başvuru-gidecek-kanal-ayarla #kanal**
-> **Kayıt edilen kişiden alınacak rolü ayarlar.**
-<:botlist:850815022531870731> **p!kayıt-kanal #kanal**
+> **Başvuru gidecek kanalı ayarlar.**
+<:botlist:850815022531870731> **p!başvuru-yapılacak-kanal-ayarla #kanal**
 > **Kayıtın yapılacağı kanalı belirlersiniz.**
 <:botlist:850815022531870731> **p!kayıt-hg #kanal**
 > **Kayıt hoş geldin kanalını ayarlarsınız.**
@@ -18,7 +19,7 @@ exports.run = async(client, message, args) => {
 <:botlist:850815022531870731> **p!kız-rol @rol**
 > **Kayıt edilince verilecek kız rolü ayarlar**
 
-<a:assagiok:850817439783583834> **__Kayıt Komutları__** <a:assagiok:850817439783583834>
+<a:assagiok:850817439783583834> **__Bot Ekle & Onayla & Reddet Komutları__** <a:assagiok:850817439783583834>
 <:botlist:850815022531870731> **p!erkek @kullanıcı isim yaş**
 > **Erkekleri kayıt etmeye yarar.**
 <:botlist:850815022531870731> **p!kız @kullanıcı isim yaş**
@@ -38,11 +39,11 @@ exports.conf = {
 enabled: true,
 guildOnly: false,
 permLevel: 0,
-aliases: ['kayıt']
+aliases: ['botlist']
 
 
 
 };
 exports.help = {
-name: "kayıtsistemi"
+name: "botlistsistemi"
 };
