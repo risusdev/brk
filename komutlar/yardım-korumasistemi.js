@@ -34,5 +34,5 @@ aliases: ['koruma']
 
 };
 exports.help = {
-name: "koruma-sistemi"
+name: "korumasistemi"
 };

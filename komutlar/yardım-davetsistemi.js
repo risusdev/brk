@@ -1,38 +1,48 @@
-const WestraDiscord = require('discord.js');
-const WestraClient = new WestraDiscord.Client();
-const ayar = require('../config.json');
-let WestraPrefix = ayar.prefix
-let WestraGif = ayar.giflink
+const discord = require('discord.js');
+exports.run = async(client, message, args) => {
+    const embed = new discord.MessageEmbed()
+.setAuthor(`Pearlys Davet Sistemi Yardım Menüsü`, client.user.avatarURL())
+.setColor("#09f3f3") 
+  .setTitle(`Sanırım Davet Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
+     .setDescription(`
+<a:kayit:850809778418221126> **p!davet-kanal #kanal**
+> **Davet Giriş Çıkış Kanalını Ayarlar!**
+<a:kayit:850809778418221126> **p!kayıt-kanal #kanal**
+> **Kayıtın yapılacağı kanalı belirlersiniz.**
+<a:kayit:850809778418221126> **p!kayıt-hg #kanal**
+> **Kayıt hoş geldin kanalını ayarlarsınız.**
+<a:kayit:850809778418221126> **p!kayıt-yetkili @rol**
+> **Bir Kişiyi Kayıt Edebilecek Yetkiliyi Ayarlar**
+<a:kayit:850809778418221126> **p!erkek-rol @rol**
+> **Kayıt edilince verilecek erkek rolü ayarlar.**
+<a:kayit:850809778418221126> **p!kız-rol @rol**
+> **Kayıt edilince verilecek kız rolü ayarlar**
 
-exports.run = (client, message) => {
- const WestraEmbed = new WestraDiscord.MessageEmbed()
-  .setColor(0x36393F)
- .setAuthor(`${client.user.username} | Davet Sistemi Yardım Menüsü`)
- .setDescription(`
-<a:HareketliHype:822382020725309465> **${WestraPrefix}rütbe-ekle @rol davet** \n-> Rütbe ekler.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}rütbeler** \n-> Rütbeleri gösterir 1'den 10'a kadar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}rütbe-sıfırla** \n-> Rütbeyi sıfırlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}davetleri-sıfırla** \n-> Davetleri sıfırlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}top** \n-> Lider tablosunu gösterir.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}davetlerim** \n-> Davetlerinizi gösterir.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}bonus-ekle** \n-> Bonus ekler.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}davet-kanal #kanal** \n-> Davet kanalını ayarlar.
-<a:HareketliHype:822382020725309465> **${WestraPrefix}davet-kanal-sıfırla** \n-> Davet kanalını sıfırlar.`)
- .setFooter(`Pearlys`)
- .setTimestamp()
- .setImage(WestraGif)
- message.channel.send(WestraEmbed)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  kategori: "Bot",
-  permLevel: 0
+<a:assagiok:850817439783583834> **__Kayıt Komutları__** <a:assagiok:850817439783583834>
+<a:kayit:850809778418221126> **p!erkek @kullanıcı isim yaş**
+> **Erkekleri kayıt etmeye yarar.**
+<a:kayit:850809778418221126> **p!kız @kullanıcı isim yaş**
+> **Kızları kayıt etmeye yarar.**
+
+<a:assagiok:850817439783583834> **__Sıfırlamak İçin__** <a:assagiok:850817439783583834>
+
+<a:kayit:850809778418221126> **__Bir Komutu Sıfırlamak İçin p!<komut> sıfırla Örnegin : p!kayıt-yetkili sıfırla Şeklinde Sıfırlıyabilirsiniz !__**
+> **KAYIT SİSTEMİ KOMUTLARINI NASIL SIFIRLARIZ CEVAPININ YANITI ANLATILDI**
+`)   
+.setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
+.setFooter("Pearlys", message.author.avatarURL())
+.setTimestamp()
+message.channel.send(embed)
 };
+exports.conf = {
+enabled: true,
+guildOnly: false,
+permLevel: 0,
+aliases: ['kayıt']
 
+
+
+};
 exports.help = {
-  name: 'davetsistemi',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
+name: "kayıtsistemi"
 };
