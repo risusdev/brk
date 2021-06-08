@@ -1,43 +1,38 @@
-const WestraDiscord = require('discord.js');
-const WestraClient = new WestraDiscord.Client();
-const ayar = require('../config.json');
-let WestraPrefix = ayar.prefix
-let WestraGif = ayar.giflink
+const discord = require('discord.js');
+exports.run = async(client, message, args) => {
+    const embed = new discord.MessageEmbed()
+.setAuthor(`Pearlys Kayıt Sistemi Yardım Menüsü`, client.user.avatarURL())
+.setColor("#09f3f3") 
+  .setTitle(`Sanırım Kayıt Komutlarımı Merak Ettin <a:assagiok:850817439783583834>`)   
+     .setDescription(`
+<a:guard1:850810781012066415> **p!ban-koruma #kanal**
+> **Ban koruma sistemini açar.**
+<a:guard1:850810781012066415> **p!kanal-koruma #kanal**
+> **Kanal koruma sistemini açar.**
+<a:guard1:850810781012066415> **p!rol-koruma #kanal**
+> **Rol koruma sistemini açar.**
+<a:guard1:850810781012066415> **p!spam-koruma**
+> ** Spam koruma sistemini açar.**
 
-exports.run = (client, message) => {
- const WestraEmbed = new WestraDiscord.MessageEmbed()
-  .setColor(0x36393F)
- .setAuthor(`${client.user.username} | Kayıt Sistemi Yardım Menüsü`)
- .setDescription(` **${WestraPrefix}alınacak-rol @rol** \n-> Kayıt edilen kişiden alınacak rolü ayarlar.
- **${WestraPrefix}alınacak-rol sıfırla** \n-> Kayıt edilen kişiden alınacak rolü sıfırlar.
- **${WestraPrefix}kayıt-kanal #kanal** \n-> Kayıtın yapılacağı kanalı belirlersiniz.
- **${WestraPrefix}kayıt-kanal sıfırla** \n-> Kayıtın yapılacağı kanalı sıfırlarsınız.
- **${WestraPrefix}kayıt-hg #kanal** \n-> Kayıt hoş geldin kanalını ayarlarsınız.
- **${WestraPrefix}kayıt-hg sıfırla** \n-> Kayıt hoş geldin kanalını sıfırlarsınız.
- **${WestraPrefix}kayıt-yetkili @rol** \n-> Kayıt edebilecek yetkiyi ayarlar.
- **${WestraPrefix}kayıt-yetkili sıfırla** \n-> Kayıt edebilecek yetkiyi sıfırlar.
- **${WestraPrefix}erkek-rol @rol** \n-> Kayıt edilince verilecek erkek rolü ayarlar.
- **${WestraPrefix}erkek-rol sıfırla** \n-> Kayıt edilince verilecek erkek rolünü sıfırlar.
- **${WestraPrefix}kız-rol @rol** \n-> Kayıt edilince verilecek kız rolü ayarlar.
- **${WestraPrefix}kız-rol sıfırla** \n-> Kayıt edilince verilecek kız rolünü sıfırlar.
- **${WestraPrefix}erkek @kullanıcı isim yaş** \n-> Erkekleri kayıt etmeye yarar.
- **${WestraPrefix}kız @kullanıcı isim yaş** \n-> Kızları kayıt etmeye yarar.
-`)
- .setFooter(`Pearlys`)
- .setTimestamp()
- .setImage(WestraGif)
- message.channel.send(WestraEmbed)
-}
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  kategori: "Bot",
-  permLevel: 0
+<a:assagiok:850817439783583834> **__Sıfırlamak İçin__** <a:assagiok:850817439783583834>
+
+<a:guard1:850810781012066415> **__Bir Komutu Sıfırlamak İçin p!<komut>-sıfırla Örnegin : p!rol-koruma-sıfırla Şeklinde Sıfırlıyabilirsiniz !__**
+> **Bi Koruma Sistemini Nasıl Sıfırlayabileceginiz Anlatılır.**
+`)   
+.setImage(`https://cdn.discordapp.com/attachments/850789768651603978/850815304989016064/standard.gif`)
+.setFooter("Pearlys", message.author.avatarURL())
+.setTimestamp()
+message.channel.send(embed)
 };
+exports.conf = {
+enabled: true,
+guildOnly: false,
+permLevel: 0,
+aliases: ['koruma']
 
+
+
+};
 exports.help = {
-  name: 'kayıtsistemi',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
+name: "koruma-sistemi"
 };
