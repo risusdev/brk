@@ -1,7 +1,7 @@
 const discord = require('discord.js');
 exports.run = async(client, message, args) => {
     const embed = new discord.MessageEmbed()
-.setAuthor(`Pearlys Yardım Menüsü`, client.user.avatarURL())
+.setAuthor(`Pearlys Logo Yardım Menüsü`, client.user.avatarURL())
 .setColor("#09f3f3") 
   .setTitle(`** Sanırım Logo Komutlarımı Merak Ettin ** <a:assagiok:850817439783583834>`)   
      .setDescription(`
